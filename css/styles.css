@@ -100,7 +100,12 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--second-text-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .header-item:hover,
 .header-item:focus {
   color: var(--accent-color);
@@ -149,6 +154,10 @@ img {
 .item-svg {
   margin-right: 10px;
   fill: var(--primary-text-color);
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-contact {
@@ -163,6 +172,10 @@ img {
 
   padding-top: 32px;
   padding-bottom: 32px;
+
+  transition-property: color ;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* --------hero--------------- */
@@ -333,8 +346,14 @@ img {
 
 .employment-position {
   background: rgba(47, 48, 58, 0.8);
-  padding-top: 27px;
-  padding-bottom: 27px;
+  /* padding-top: 27px;
+  padding-bottom: 27px; */
+  
+  min-height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   position: absolute;
   width: 100%;
   bottom: 0;
@@ -416,10 +435,18 @@ img {
   align-items: center;
   justify-content: center;
   color: #afb1b8;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link {
   fill: currentColor;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-social-link:hover,
@@ -456,6 +483,10 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-list {
@@ -468,6 +499,10 @@ img {
 
 .client-icon {
   fill: currentColor;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-link:hover,
@@ -526,6 +561,10 @@ img {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .addres-item {
@@ -583,6 +622,10 @@ img {
   align-items: center;
   justify-content: center;
   color: var(--fourth-text-color);
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-link {
@@ -637,6 +680,10 @@ img {
   background-color: #f5f4fa;
 
   padding: 6px 22px;
+
+  transition-property: background-color, color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-button:hover,
@@ -667,7 +714,8 @@ img {
 
 .portfolio-link:hover .portfolio-position-text,
 .portfolio-link:focus .portfolio-position-text {
-  opacity: 1;
+  /* opacity: 1; */
+  transform: translateY(0);
 }
 
 .portfolio-title {
@@ -709,6 +757,7 @@ img {
 .portfolio-position {
   position: relative;
   display: block;
+  overflow: hidden;
 }
 
 
@@ -728,7 +777,11 @@ img {
 
   padding: 63px 24px;
 
-  opacity: 0;
+  transform: translateY(100%);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* opacity: 0; */
 }
 
 /* .portfolio-position-text:hover {
@@ -747,13 +800,15 @@ img {
   left: 0;
   height: 100%;
   width: 100%;
+
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
 
   width: 528px;
   height: 581px;
@@ -764,6 +819,9 @@ img {
 
   display: flex;
   justify-content: flex-end;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-window.is-hidden {
@@ -771,8 +829,8 @@ img {
   pointer-events: none;
 }
 
-.button-modal-close {
-  
+.modal-window.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.1);
 }
 
 .button-modal {
@@ -790,3 +848,6 @@ img {
 
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+
+
